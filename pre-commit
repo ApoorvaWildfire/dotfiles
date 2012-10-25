@@ -21,6 +21,4 @@ do
         GREP_COLOR='4;5;37;41' xargs grep --color --with-filename -n $i && \
         echo 'COMMIT REJECTED Found'  $i 'references. Please remove them before commiting' && exit 1
 done
-
-# If there are whitespace errors, print the offending file names and fail.
-exec git diff-index --check --cached $against --
+exit 0
